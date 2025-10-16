@@ -41,4 +41,14 @@ const brukere = await db.select().from(Bruker);
 
 </form>
 
+<h2>Innhold i DB</h2>
+
+{
+  brukere.map(({ id, fornavn, etternavn }) => (
+    <article>
+      <p>Bruker {id}: {fornavn} {etternavn}</p>
+    </article>
+  ))
+}
+
 </Layout>
